@@ -10,12 +10,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
-public class HelloWorldController {
+public class EmployeeController {
 
     @Autowired
     private HelloWorldService hws;
 
-    @GetMapping
+    @GetMapping("/")
     public List<Employee> getMethod(){
         return hws.getMethod();
     }
@@ -27,8 +27,8 @@ public class HelloWorldController {
 
     @PostMapping
     public String postMethod(@RequestBody Employee employee){
-//        Employee employee = new Employee(5,"Sivagami", "Business");
-        return hws.addEmployee(employee);
+        Employee employee = new Employee(5,"Sivagami", "Business");
+         return hws.addEmployee(employee);
     }
     @PutMapping
     public String putMethod(@RequestBody Employee employee){
