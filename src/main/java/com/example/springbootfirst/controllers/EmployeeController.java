@@ -2,7 +2,7 @@ package com.example.springbootfirst.controllers;
 
 
 import com.example.springbootfirst.models.Employee;
-import com.example.springbootfirst.services.HelloWorldService;
+import com.example.springbootfirst.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private HelloWorldService hws;
+    private EmployeeService hws;
 
     @GetMapping("/")
     public List<Employee> getMethod(){
@@ -27,7 +27,7 @@ public class EmployeeController {
 
     @PostMapping
     public String postMethod(@RequestBody Employee employee){
-        Employee employee = new Employee(5,"Sivagami", "Business");
+//        Employee employee = new Employee(5,"Sivagami", "Business");
          return hws.addEmployee(employee);
     }
     @PutMapping
